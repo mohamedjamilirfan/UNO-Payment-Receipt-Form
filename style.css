@@ -204,7 +204,6 @@ p {
   background-size: contain; /* Adjust image size to fit */
   background-repeat: no-repeat; /* Prevent tiling */
   background-position: center; /* Center the image */
-  border: 1px solid black;
 }
 
 #uploading-signature img {
