@@ -177,7 +177,7 @@ p {
 }
 
 .details-table td {
-  padding: 7px;
+  padding: 11px;
   border: none;
 }
 
@@ -194,16 +194,17 @@ p {
 
 .signature p {
   text-align: center;
-  width: 31%;
+  width: 38.5%;
 }
 
 .signature-box {
-  width: 202px;
-  height: 100px;
+  width: 250px;
+  height: 125px;
   margin-top: 10px; /* Ensure a white background */
   background-size: contain; /* Adjust image size to fit */
   background-repeat: no-repeat; /* Prevent tiling */
   background-position: center; /* Center the image */
+  border: 1px solid black;
 }
 
 #uploading-signature img {
@@ -295,5 +296,5 @@ footer {
 #upload-container {
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: 48.5px;
 }
