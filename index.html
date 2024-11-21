@@ -17,29 +17,101 @@
           <div class="receipt-details">
             <div class="receipt-details-english">
               <p style="margin-bottom: 7px; font-weight: 500">
-                Date :<input type="date" id="english-date" /><span
-                  id="formatted-english-date"
-                  style="display: none"></span>
+                Date :<input
+                  type="date"
+                  id="english-date"
+                  style="margin-left: 5px; cursor: pointer" />
+                <span
+                  id="underline1"
+                  style="
+                    position: relative;
+                    font-family: 'Calibri';
+                    font-weight: 500;
+                    font-size: 16px;
+                    top: 11px;
+                    left: -120px;
+                    cursor: default;
+                  "
+                  >................................</span
+                >
+                <span id="formatted-english-date" style="display: none"></span>
               </p>
               <p style="font-weight: 500">
                 Ref :
                 <input
                   type="text"
                   id="english-ref"
-                  placeholder="Enter Ref Number" />
+                  placeholder="Enter Ref Number"
+                  style="width: 110px; margin-left: 10px" />
+                <span
+                  id="underline2"
+                  style="
+                    position: relative;
+                    font-family: 'Calibri';
+                    font-weight: 500;
+                    font-size: 16px;
+                    top: 11px;
+                    left: -122px;
+                    cursor: default;
+                  "
+                  >................................</span
+                >
                 <span id="formatted-english-ref" style="display: none"></span>
               </p>
             </div>
             <div class="receipt-details-arabic">
               <p style="text-align: right">
-                <span style="text-align: right"> : التاريخ</span>
+                <span
+                  style="
+                    text-align: right;
+                    font-family: 'Markazi Text', serif;
+                    font-optical-sizing: auto;
+                    font-weight: 500;
+                    font-size: 20px;
+                  ">
+                  <span style="margin-right: 2.5px">:</span> التاريخ</span
+                >
+
+                <span
+                  id="underline3"
+                  style="
+                    position: relative;
+                    font-family: 'Calibri';
+                    font-weight: 500;
+                    font-size: 16px;
+                    top: 7px;
+                    right: 6px;
+                  "
+                  >................................</span
+                >
                 <span
                   id="arabic-date"
                   style="display: inline-block; color: #000"></span>
               </p>
               <p style="text-align: right">
-                <span style="text-align: right"> : المرجع</span
-                ><span
+                <span
+                  style="
+                    text-align: right;
+                    font-family: 'Markazi Text', serif;
+                    font-optical-sizing: auto;
+                    font-weight: 500;
+                    font-size: 20px;
+                  ">
+                  <span>:</span> المرجع</span
+                >
+                <span
+                  id="underline4"
+                  style="
+                    position: relative;
+                    font-family: 'Calibri';
+                    font-weight: 500;
+                    font-size: 16px;
+                    top: 7px;
+                    right: 6px;
+                  "
+                  >................................</span
+                >
+                <span
                   id="arabic-ref"
                   style="font-size: 15px; font-family: sans-serif"></span>
               </p>
@@ -58,8 +130,21 @@
                 margin-bottom: 10px;
                 padding: 5px;
                 font-size: 16px;
-                position: absolute;
-                top: 335px;
+                position: relative;
+                top: 6px;
+                left: 220px;
+                width: 20px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                appearance: none; /* Hide the default arrow */
+                -webkit-appearance: none; /* Safari compatibility */
+                -moz-appearance: none; /* Firefox compatibility */
+                background-image: url('assets/arrow-down.png'); /* Your custom arrow image */
+                background-repeat: no-repeat;
+                background-position: right center; /* Position it on the right */
+                background-size: 15px; /* Adjust size */
+                padding-right: 30px; /* Make space for the arrow */
               ">
               <option value="PAYMENT RECEIPT">PAYMENT RECEIPT</option>
               <option value="RECEIPT VOUCHER">RECEIPT VOUCHER</option>
@@ -68,7 +153,7 @@
               id="receipt-title"
               style="
                 border: solid 2px black;
-                padding: 3px 15px;
+                padding: 3px 30px 7px 15px;
                 border-radius: 6px;
                 text-decoration: underline;
                 text-underline-offset: 5px;
@@ -187,7 +272,7 @@
             </tr>
 
             <tr style="height: auto">
-              <td>FORWARDS =</td>
+              <td>FORWARDS:</td>
               <td style="height: auto; line-height: 25px">
                 <strong
                   ><input
@@ -223,7 +308,7 @@
               </td>
             </tr>
             <tr>
-              <td style="padding: 2px 25px">PLOT NUMBER:</td>
+              <td style="padding: 2px 25px">PLOT NO:</td>
               <td style="padding: 2px 25px">
                 <strong
                   ><input

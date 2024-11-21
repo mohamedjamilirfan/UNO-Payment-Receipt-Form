@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const amountText = document.getElementById('amount-text');
   const amountNumericDisplay = document.createElement('span');
   amountNumericDisplay.id = 'amount-numeric-display';
-  amountNumericDisplay.style.display = 'inline'; // Ensure visibility during PDF rendering
+  amountNumericDisplay.style.display = 'none'; // Ensure visibility during PDF rendering
   amountInput.parentElement.appendChild(amountNumericDisplay);
 
   const numberToWords = (num) => {
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formattedChequeSpan.textContent = chequeInput.value;
     formattedChequeSpan.style.display = 'inline-block';
     formattedChequeSpan.style.fontWeight = 'bold';
-    formattedChequeSpan.style.border = '0.5px solid black';
+    formattedChequeSpan.style.border = '1px solid rgba(0, 0, 0, 0.3)';
     formattedChequeSpan.style.padding = '1px 35px 4px 6px';
     formattedChequeSpan.style.borderRadius = '5px';
 
@@ -226,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
     staticDate.textContent = formattedEnglishDateSpan.textContent;
     englishDateInput.parentNode.replaceChild(staticDate, englishDateInput);
     staticDate.style.display = 'inline-block';
-    staticDate.style.borderBottom = '2px dotted';
     staticDate.style.marginLeft = '5px';
     staticDate.style.outline = 'none';
 
@@ -279,12 +278,15 @@ document.addEventListener('DOMContentLoaded', () => {
     formattedNameSpan.textContent = `${titleSelect.value} ${nameInput.value}`;
     formattedEnglishDateSpan.style.display = 'none';
     formattedEnglishRefSpan.style.display = 'inline';
+    formattedEnglishRefSpan.style.position = 'relative';
+    formattedEnglishRefSpan.style.top = '0px';
+    formattedEnglishRefSpan.style.left = '-122px';
     formattedNameSpan.style.display = 'inline';
 
     amountText.style.display = 'inline';
     amountNumericDisplay.style.display = 'inline';
     amountInput.style.display = 'none';
-    amountNumericDisplay.style.border = '0.5px solid black';
+    amountNumericDisplay.style.border = '1px solid rgba(0, 0, 0, 0.3)';
     amountNumericDisplay.style.padding = '1px 35px 4px 6px';
     amountNumericDisplay.style.borderRadius = '5px';
 
@@ -300,17 +302,38 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     const uploadSignatureButton = document.getElementById('upload-signature');
     const removeSignatureButton = document.getElementById('remove-signature');
+    const underLine1 = document.getElementById('underline1');
+    const underLine2 = document.getElementById('underline2');
+    const receiptTitle = document.getElementById('receipt-title');
+    const receiptSelect = document.getElementById('receipt-type');
 
+    receiptSelect.style.display = 'none';
     uploadingSignatureButton.style.display = 'none';
     uploadSignatureButton.style.display = 'none';
     removeSignatureButton.style.display = 'none';
+    underLine1.style.display = 'inline-block';
+    underLine1.style.position = 'relative';
+    underLine1.style.top = '7px';
+    underLine1.style.left = '-85px';
+    underLine2.style.display = 'inline-block';
+    underLine2.style.position = 'relative';
+    underLine2.style.top = '7px';
+    underLine2.style.left = '6px';
+    receiptTitle.style.border = 'solid 2px black';
+    receiptTitle.style.padding = '3px 20px 7px 20px';
+    receiptTitle.style.borderRadius = '6px';
+    receiptTitle.style.textDecoration = 'underline';
+    receiptTitle.style.textUnderlineOffset = '5px';
+    receiptTitle.style.textDecorationThickness = '1.5px';
+    receiptTitle.style.textAlign = 'center';
+    receiptTypeSelect.style.display = 'none';
 
     const options = {
       margin: 0,
       filename: 'Payment Receipt.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
     };
 
     html2pdf()
@@ -329,9 +352,28 @@ document.addEventListener('DOMContentLoaded', () => {
         nameInput.style.display = 'inline-block';
         titleSelect.style.display = 'inline-block';
         amountInput.style.display = 'inline-block';
+        amountNumericDisplay.style.display = 'none';
         uploadingSignatureButton.style.display = 'inline-block';
         uploadSignatureButton.style.display = 'inline-block';
         removeSignatureButton.style.display = 'inline-block';
+        underLine1.style.display = 'inline-block';
+        underLine1.style.position = 'relative';
+        underLine1.style.top = '11px';
+        underLine1.style.left = '-120px';
+        underLine2.style.display = 'inline-block';
+        underLine2.style.position = 'relative';
+        underLine2.style.top = '11px';
+        underLine2.style.left = '-120px';
+        receiptTitle.style.border = 'solid 2px black';
+        receiptTitle.style.padding = '3px 30px 7px 15px';
+        receiptTitle.style.borderRadius = '6px';
+        receiptTitle.style.textDecoration = 'underline';
+        receiptTitle.style.textUnderlineOffset = '5px';
+        receiptTitle.style.textDecorationThickness = '1.5px';
+        receiptTitle.style.textAlign = 'center';
+        receiptSelect.style.position = 'relative';
+        receiptSelect.style.left = '220px';
+        receiptSelect.style.top = '6px';
 
         formattedEnglishRefSpan.style.display = 'none';
         formattedNameSpan.style.display = 'none';

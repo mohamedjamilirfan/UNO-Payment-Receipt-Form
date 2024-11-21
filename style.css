@@ -11,14 +11,14 @@ body {
 .receipt-container {
   width: 700px; /* Adjust to fit within the PDF page */
   max-width: 100%;
-  height: 1010px;
+  height: 1035px;
   margin: 20px auto;
   padding: 10px;
   margin-top: 10px;
 }
 
 .we {
-  height: 960px;
+  height: 1020px;
   width: 700px;
   background: url('assets/template-background.png') no-repeat bottom right;
   background-size: contain; /* Scales the image to fit */
@@ -80,7 +80,6 @@ header img {
 .company-info-arabic h1 {
   font-size: 40px;
   text-align: center;
-  font-family: 'Lateef', serif;
   font-weight: 800;
   font-style: normal;
   color: #d00;
@@ -91,10 +90,6 @@ header img {
   margin: 0;
   color: black;
   text-align: center;
-  font-size: 25px;
-  font-family: 'Markazi Text', serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -120,7 +115,7 @@ input[type='checkbox'] {
 .receipt-details {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 20px 0px 30px 0px;
 }
 
 #formatted-english-date,
@@ -160,7 +155,7 @@ p {
 
 #download-pdf {
   display: block;
-  margin: 20px auto;
+  margin: 50px auto;
   padding: 10px 20px;
   background-color: #d00;
   color: #fff;
@@ -178,11 +173,11 @@ p {
   width: 100%;
   height: 370px;
   border-collapse: collapse;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .details-table td {
-  padding: 10px;
+  padding: 7px;
   border: none;
 }
 
@@ -302,4 +297,3 @@ footer {
   justify-content: center;
   gap: 22px;
 }
-
