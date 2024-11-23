@@ -98,10 +98,196 @@ main {
   width: 97%;
 }
 
-h2 {
+#english-date {
+  margin-left: 5px;
+  cursor: pointer;
+  width: 97px;
+}
+
+#underline1 {
+  position: relative;
+  font-family: 'Calibri';
+  font-weight: 500;
+  font-size: 16px;
+  top: 11px;
+  left: -105px;
+  cursor: default;
+}
+
+#english-ref {
+  width: 97px;
+  margin-left: 10px;
+}
+
+#underline2 {
+  position: relative;
+  font-family: 'Calibri';
+  font-weight: 500;
+  font-size: 16px;
+  top: 11px;
+  left: -107px;
+  cursor: default;
+}
+
+.arabicText1 {
+  text-align: right;
+  font-family: 'Markazi Text', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#underline3 {
+  position: relative;
+  font-family: 'Calibri';
+  font-weight: 500;
+  font-size: 16px;
+  top: 7px;
+  right: 6px;
+}
+
+.arabicText2 {
+  text-align: right;
+  font-family: 'Markazi Text', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#underline4 {
+  position: relative;
+  font-family: 'Calibri';
+  font-weight: 500;
+  font-size: 16px;
+  top: 7px;
+  right: 6px;
+}
+
+#receipt-type {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 16px;
+  position: relative;
+  top: 6px;
+  left: 220px;
+  width: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  appearance: none; /* Hide the default arrow */
+  -webkit-appearance: none; /* Safari compatibility */
+  -moz-appearance: none; /* Firefox compatibility */
+  background-image: url('assets/arrow-down.png'); /* Your custom arrow image */
+  background-repeat: no-repeat;
+  background-position: right center; /* Position it on the right */
+  background-size: 15px; /* Adjust size */
+  padding-right: 30px; /* Make space for the arrow */
+}
+
+#receipt-title {
   text-align: center;
   margin: 0;
   color: #333;
+  border: solid 1px black;
+  padding: 3px 30px 7px 15px;
+  border-radius: 6px;
+}
+
+.titleUnderline {
+  width: 100%;
+  position: relative;
+  height: 1.5px;
+  background-color: #000;
+}
+
+#amount-input {
+  width: 95.6%;
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-weight: 700;
+}
+
+#title-select {
+  width: 13.5%;
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-weight: 700;
+}
+
+#name-input {
+  width: 80%;
+  border: 1.5px solid #ddd;
+  padding: 5px;
+  font-weight: 700;
+}
+
+#cheque-input {
+  display: none;
+  width: 50%;
+  border: 1px solid #ddd;
+  padding: 2px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.cheque-input {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 2px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.cheque-input1 {
+  width: 70%;
+  border: 1px solid #ddd;
+  padding: 2px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.cheque-input2 {
+  width: 70%;
+  border: 1px solid #ddd;
+  padding: 2px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.cheque-input3 {
+  width: 50%;
+  border: 1px solid #ddd;
+  padding: 2px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sharjah {
+  font-size: 17px;
+}
+
+#td1 {
+  padding: 7px 10px 2px 25px;
+}
+
+#td2 {
+  padding: 7px 10px 2px 25px;
+}
+
+#td3 {
+  padding: 2px 25px;
+}
+
+#td4 {
+  padding: 2px 25px;
+}
+
+#td5 {
+  padding: 2px 25px;
+}
+
+#td6 {
+  padding: 2px 25px;
 }
 
 input[type='checkbox'] {
@@ -176,9 +362,13 @@ p {
   margin-top: 50px;
 }
 
+tr {
+  height: auto;
+}
+
 .details-table td {
-  padding: 11px;
   border: none;
+  padding: 11px;
 }
 
 .signature {
@@ -263,6 +453,10 @@ footer {
   color: #555;
 }
 
+footer img {
+  width: 630px;
+}
+
 #verification-container {
   margin-top: 10px;
   display: flex;
@@ -296,4 +490,292 @@ footer {
   display: flex;
   justify-content: center;
   gap: 48.5px;
+}
+
+/* Style for the mobile popup */
+#mobile-popup {
+  position: fixed;
+  width: 93%;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+/* Show the popup */
+#mobile-popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hide the popup (default state) */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+@media (max-width: 480px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .receipt-container {
+    width: 370px;
+    max-width: 100%;
+    height: 600px;
+  }
+  .we {
+    width: 370px;
+    height: 600px;
+  }
+  header {
+    padding: 0;
+  }
+  main {
+    margin-top: 3px;
+  }
+  header img {
+    width: 370px;
+  }
+  .receipt-details {
+    margin: 5px 0px 5px 0px;
+    width: 100%;
+  }
+  .receipt-details p {
+    font-size: 12px;
+  }
+  #english-date {
+    font-size: 9px;
+    width: 78px;
+  }
+  #underline1 {
+    font-size: 12.5px;
+    top: 10px;
+    left: -90px;
+  }
+  #english-ref {
+    font-size: 9px;
+    width: 75px;
+  }
+  #underline2 {
+    font-size: 12.5px;
+    top: 10px;
+    left: -90px;
+  }
+  .arabicText1,
+  .arabicText2 {
+    font-size: 13.5px;
+    font-weight: 500;
+  }
+  #underline3 {
+    font-size: 12.5px;
+    right: 2.5px;
+  }
+  #underline4 {
+    font-size: 12.5px;
+  }
+  #receipt-title {
+    font-size: 15px;
+    padding: 2px 18px 4px 10px;
+    margin-right: 16px;
+  }
+  #receipt-type {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    position: relative;
+    top: 5px;
+    left: 154px;
+    width: 20px;
+    background-size: 9.5px; /* Adjust size */
+    padding-right: 30px; /* Make space for the arrow */
+  }
+  .details-table {
+    margin-top: 0px;
+  }
+  .details-table td {
+    padding: 1px;
+    font-size: 11px;
+  }
+  #amount-input {
+    font-size: 10px;
+    padding: 2.5px;
+    width: 90%;
+  }
+  #title-select {
+    font-size: 9px;
+    padding: 1.5px;
+    width: 16.5%;
+    margin: 0;
+  }
+  #name-input {
+    font-size: 10px;
+    padding: 2px;
+    width: 70%;
+    margin: 0;
+  }
+  input[type='checkbox'] {
+    height: 16px;
+    width: 16px;
+    top: -1px;
+  }
+  #cheque-input {
+    font-size: 10px;
+    width: 30%;
+  }
+  .label1,
+  .label2 {
+    display: inline-flex;
+    height: 16px;
+    position: relative;
+    top: 5px;
+  }
+  .cheque-input {
+    font-size: 10px;
+    width: 90%;
+    padding: 1px 2px;
+  }
+  #td1,
+  #td2 {
+    padding: 3px 14px;
+    height: 10px;
+  }
+  .cheque-input1,
+  .cheque-input2,
+  .cheque-input3 {
+    font-size: 10px;
+  }
+  .td1 {
+    position: relative;
+    top: -20px;
+  }
+  .td2 {
+    position: relative;
+    top: -40px;
+  }
+  .td3 {
+    position: relative;
+    top: -60px;
+  }
+  .td4 {
+    position: relative;
+    top: -75px;
+  }
+  .td5 {
+    position: relative;
+    top: -103px;
+  }
+  .td6 {
+    position: relative;
+    top: -120px;
+  }
+  .td7 {
+    position: relative;
+    top: -120px;
+  }
+  .td8 {
+    position: relative;
+    top: -120px;
+  }
+  #td3,
+  #td4,
+  #td5,
+  #td6 {
+    padding: 3px 14px;
+    height: 10px;
+  }
+  .sharjah {
+    font-size: 12px;
+  }
+  .signature {
+    margin: 0px 10px 0px 0px;
+    position: relative;
+    top: -100px;
+  }
+  .signature p {
+    font-size: 12px;
+    margin-left: 0px;
+    width: 35%;
+  }
+  .signature-box {
+    width: 130px;
+    height: 65px;
+    margin-top: 5px;
+  }
+  #upload-container {
+    gap: 24px;
+  }
+  #uploading-signature {
+    padding: 0px 4px;
+    margin-top: 5px;
+    height: 20px;
+  }
+  #upload-signature {
+    padding: 0px 6px;
+    margin-top: 5px;
+    height: 20px;
+  }
+  #remove-signature {
+    padding: 0px 6px;
+    margin-top: 5px;
+    height: 20px;
+  }
+  #uploading-signature img {
+    height: 17px;
+    width: 17px;
+    margin-top: 0px;
+  }
+  #upload-signature img {
+    height: 13px;
+    width: 13px;
+    margin-top: 2px;
+    margin-left: 1.5px;
+  }
+  #remove-signature img {
+    height: 10px;
+    width: 10px;
+    margin-top: 4px;
+  }
+  footer img {
+    width: 355px;
+    margin-right: 6px;
+  }
+  #verification-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+
+  #signature-passcode {
+    padding: 2px;
+    font-size: 9px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 65px;
+  }
+
+  #verify-passcode {
+    padding: 2.5px 5px;
+    font-size: 9px;
+    background-color: #d00;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
 }

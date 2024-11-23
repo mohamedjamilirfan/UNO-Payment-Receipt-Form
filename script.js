@@ -154,17 +154,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const formattedChequeSpan = document.getElementById('formatted-cheque');
 
   function toggleChequeInput(checkbox) {
-    if (checkbox === chequeCheckbox && chequeCheckbox.checked) {
-      chequeInput.style.display = 'inline-block'; // Show cheque input
-      chequeInput.required = true; // Make it required
-      cashCheckbox.checked = false; // Uncheck the "Cash" checkbox
-    } else if (checkbox === cashCheckbox && cashCheckbox.checked) {
-      chequeInput.style.display = 'none'; // Hide cheque input
-      chequeInput.required = false; // Remove required attribute
-      chequeInput.value = ''; // Clear its value
-      chequeCheckbox.checked = false; // Uncheck the "Cheque" checkbox
+    console.log('Checkbox toggled:', checkbox.id, checkbox.checked); // Debugging log
+    if (checkbox.id === 'cheque-checkbox' && checkbox.checked) {
+      chequeInput.style.display = 'inline-block';
+      chequeInput.required = true;
+      cashCheckbox.checked = false;
+    } else if (checkbox !== chequeCheckbox && checkbox.checked) {
+      chequeInput.style.display = 'none';
+      chequeInput.required = false;
+      chequeInput.value = '';
+      chequeCheckbox.checked = false;
     }
   }
+  
 
   chequeCheckbox.addEventListener('change', () =>
     toggleChequeInput(chequeCheckbox)
@@ -280,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formattedEnglishRefSpan.style.display = 'inline';
     formattedEnglishRefSpan.style.position = 'relative';
     formattedEnglishRefSpan.style.top = '0px';
-    formattedEnglishRefSpan.style.left = '-122px';
+    formattedEnglishRefSpan.style.left = '-98px';
     formattedNameSpan.style.display = 'inline';
 
     amountText.style.display = 'inline';
@@ -319,12 +321,9 @@ document.addEventListener('DOMContentLoaded', () => {
     underLine2.style.position = 'relative';
     underLine2.style.top = '7px';
     underLine2.style.left = '6px';
-    receiptTitle.style.border = 'solid 2px black';
+    receiptTitle.style.border = 'solid 1px black';
     receiptTitle.style.padding = '3px 20px 7px 20px';
     receiptTitle.style.borderRadius = '6px';
-    receiptTitle.style.textDecoration = 'underline';
-    receiptTitle.style.textUnderlineOffset = '5px';
-    receiptTitle.style.textDecorationThickness = '1.5px';
     receiptTitle.style.textAlign = 'center';
     receiptTypeSelect.style.display = 'none';
 
@@ -359,17 +358,14 @@ document.addEventListener('DOMContentLoaded', () => {
         underLine1.style.display = 'inline-block';
         underLine1.style.position = 'relative';
         underLine1.style.top = '11px';
-        underLine1.style.left = '-120px';
+        underLine1.style.left = '-107px';
         underLine2.style.display = 'inline-block';
         underLine2.style.position = 'relative';
         underLine2.style.top = '11px';
-        underLine2.style.left = '-120px';
-        receiptTitle.style.border = 'solid 2px black';
-        receiptTitle.style.padding = '3px 30px 7px 15px';
+        underLine2.style.left = '-108px';
+        receiptTitle.style.border = 'solid 1px black';
+        receiptTitle.style.padding = '3px 30px 6px 15px';
         receiptTitle.style.borderRadius = '6px';
-        receiptTitle.style.textDecoration = 'underline';
-        receiptTitle.style.textUnderlineOffset = '5px';
-        receiptTitle.style.textDecorationThickness = '1.5px';
         receiptTitle.style.textAlign = 'center';
         receiptSelect.style.position = 'relative';
         receiptSelect.style.left = '220px';
@@ -389,6 +385,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
+
+document.getElementById('cheque-checkbox').addEventListener('touchstart', () => {
+  toggleChequeInput(document.getElementById('cheque-checkbox'));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Check screen width
+  if (window.innerWidth <= 480) {
+    const popup = document.getElementById('mobile-popup');
+
+    // Show the popup
+    popup.classList.add('show');
+
+    // Hide the popup after 5 seconds
+    setTimeout(() => {
+      popup.classList.remove('show');
+    }, 10000);
+  }
+});
+
 
 function onlyOne(checkbox) {
   var checkboxes = document.getElementsByName('option');
